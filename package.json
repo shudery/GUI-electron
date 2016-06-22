@@ -1,7 +1,7 @@
 {
   "name": "firstGUI",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "app/main.js",
   "scripts": {
     "start": "electron app/main.js",
     "build": "electron-packager ./app firstApp --platform=win32 --arch=x64 --out ./OutApp --version 0.37.3 --overwrite --icon=./app/img/daguo.jpg"

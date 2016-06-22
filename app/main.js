@@ -10,8 +10,12 @@ let win;
 
 function createWindow() {
   // 创建一个新的浏览器窗口
-  win = new BrowserWindow({width: 600, height: 600});
-
+  win = new BrowserWindow({
+        width: 360,
+        minHeight: 572,
+        title: 'firstApp',
+        icon: __dirname+'/img/daguo.jpg'
+    });
   // 并且装载应用的index.html页面
   win.loadURL('file://'+__dirname+'/html/index.html');
 
