@@ -1,0 +1,14 @@
+{
+  "name": "firstGUI",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron app/main.js",
+    "build": "electron-packager ./app firstApp --platform=win32 --arch=x64 --out ./OutApp --version 0.37.3 --overwrite --icon=./app/img/daguo.jpg"
+  },
+  "devDependencies": {
+    "asar": "^0.11.0",
+    "electron-packager": "^7.0.4",
+    "electron-prebuilt": "^1.2.0"
+  }
+}
