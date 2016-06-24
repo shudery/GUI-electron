@@ -1,8 +1,12 @@
 const electron = require('electron');
 // 控制应用生命周期的模块
-const {app} = electron;
+const {
+  app
+} = electron;
 // 创建本地浏览器窗口的模块
-const {BrowserWindow} = electron;
+const {
+  BrowserWindow
+} = electron;
 
 // 指向窗口对象的一个全局引用，如果没有这个引用，那么当该javascript对象被垃圾回收的
 // 时候该窗口将会自动关闭
@@ -11,16 +15,21 @@ let win;
 function createWindow() {
   // 创建一个新的浏览器窗口
   win = new BrowserWindow({
-        width: 360,
-        minHeight: 572,
-        title: 'firstApp',
-        icon: __dirname+'/img/daguo.jpg'
-    });
-  // 并且装载应用的index.html页面
-  win.loadURL('file://'+__dirname+'/html/index.html');
+    //width: 360,
+    height: 772,
 
-  // 打开开发工具页面
-  win.webContents.openDevTools();
+    show: false,
+    title: '俄罗斯方块',
+    icon: __dirname + '/img/daguo.jpg'
+  });
+  // 并且装载应用的index.html页面
+  win.loadURL('file://' + __dirname + '/html/index.html');
+  //
+  win.once('ready-to-show', () => {
+      win.show()
+    })
+    // 打开开发工具页面
+    // win.webContents.openDevTools();
 
   // 当窗口关闭时调用的方法
   win.on('closed', () => {
